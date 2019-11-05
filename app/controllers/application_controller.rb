@@ -5,7 +5,7 @@ class ApplicationController < Sinatra::Base
   configure do
     enable :sessions
     set :session_secret, "secret"
-  
+  end
 
   get '/' do
     erb :home
@@ -45,7 +45,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/users/home' do
-
     @user = User.find(session[:user_id])
     erb :'/users/home'
   end
